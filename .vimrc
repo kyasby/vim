@@ -1,3 +1,30 @@
+call plug#begin()
+        Plug 'ntk148v/vim-horizon'
+        Plug 'preservim/nerdtree'
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        "Plug 'sheerun/vim-polyglot'
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
+
+" if you don't set this option, this color might not correct
+" aaaa
+" aa
+set termguicolors
+
+colorscheme horizon
+
+" lightline
+let g:lightline = {}
+let g:lightline.colorscheme = 'horizon'
+
+" or this line
+let g:lightline = {'colorscheme' : 'horizon'}
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+
 "dein Scripts-----------------------------
 if &compatible
     set nocompatible               " Be iMproved
@@ -16,10 +43,6 @@ call dein#add('/Users/horiryou/.cache/dein/repos/github.com/Shougo/dein.vim')
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/neosnippet.vim')
 "call dein#add('Shougo/neosnippet-snippets')
-
-"molokaiのカラーテーマ"
-call dein#add('tomasr/molokai')
-colorscheme molokai
 
 "構文チェックを行う。
 call dein#add('scrooloose/syntastic')
