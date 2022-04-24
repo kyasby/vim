@@ -1,29 +1,28 @@
 call plug#begin()
         Plug 'ntk148v/vim-horizon'
         Plug 'preservim/nerdtree'
-        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+        Plug 'tomasr/molokai'
+        "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
         "Plug 'sheerun/vim-polyglot'
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 " if you don't set this option, this color might not correct
-" aaaa
-" aa
-set termguicolors
+ set termguicolors
+"colorscheme horizon
+ let g:lightline = {}
+" let g:lightline.colorscheme = 'horizon'
+" " or this line
+" let g:lightline = {'colorscheme' : 'horizon'}
 
-colorscheme horizon
+colorscheme molokai
 
-" lightline
-let g:lightline = {}
-let g:lightline.colorscheme = 'horizon'
-
-" or this line
-let g:lightline = {'colorscheme' : 'horizon'}
-
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-
+let mapleader = "\<space>"
+nnoremap <Leader>n :NERDTree<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
+nnoremap <Leader>r <C-R>
+nnoremap <Leader>u u
 
 "dein Scripts-----------------------------
 if &compatible
