@@ -9,20 +9,22 @@ call plug#begin()
 call plug#end()
 
 " if you don't set this option, this color might not correct
- set termguicolors
+" set termguicolors
 "colorscheme horizon
- let g:lightline = {}
+" let g:lightline = {}
 " let g:lightline.colorscheme = 'horizon'
 " " or this line
-" let g:lightline = {'colorscheme' : 'horizon'}
+let g:lightline = {'colorscheme' : 'horizon'}
 
-colorscheme molokai
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+colorscheme murphy
 
-let mapleader = "\<space>"
-nnoremap <Leader>n :NERDTree<CR>
-nnoremap <Leader>t :NERDTreeToggle<CR>
-nnoremap <Leader>r <C-R>
-nnoremap <Leader>u u
+
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 "dein Scripts-----------------------------
 if &compatible
